@@ -31,3 +31,9 @@ def menu(value):
        quantityPorts()
     else:
        print("Option not found")
+
+print("1 - Add by fields")
+print("2 - Add by quantity ports")    
+
+value = input("Choose an option: ")
+menu(value)

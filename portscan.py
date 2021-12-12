@@ -20,13 +20,13 @@ def header():
 
 def menu(value):
     if value == "1":
-       addFields()
+       add_fields()
     elif value == "2":
-       quantityPorts()
+       quantity_ports()
     else:
        print("Option not found")   
 
-def setupClient(host, port):
+def setup_client(host, port):
     client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     client.settimeout(0.5)
     code = client.connect_ex((host, int(port)))
@@ -36,19 +36,19 @@ def setupClient(host, port):
     else:
         print("Port Failed")
         
-def addFields():
+def add_fields():
     host = input("Host: ")
     port = input("Port: ")
     
-    setupClient(host, port)
+    setup_client(host, port)
     
-def quantityPorts():
+def quantity_ports():
     host = input("Host: ")
     quantity = input("Quantity ports: ")		
     ports = range(int(quantity))
     
     for port in ports:
-        setupClient(host, port)
+        setup_client(host, port)
         
 if __name__ == "__main__":
     header()
